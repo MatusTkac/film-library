@@ -1,4 +1,4 @@
-package prax.kniznica.user;
+package user;
 
 public class UserService {
 }
