@@ -1,4 +1,4 @@
-package admin;
+package prax.kniznica.admin;
 
 public class Admin {
     private String username;
