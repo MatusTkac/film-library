@@ -1,10 +1,15 @@
 package prax.kniznica.admin;
 
-public class AdminService {
 
-    public AdminService() {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-    }
+@Getter
+@Setter
+@AllArgsConstructor
+public class AdminService implements AdminServiceInterface {
+
     public void addAdmin(Admin admin) {
 
     }
@@ -13,9 +18,6 @@ public class AdminService {
     }
     public void updateAdmin(Admin admin) {
 
-    }
-    public Admin getAdmin(String username) {
-        return null;
     }
 
 }
