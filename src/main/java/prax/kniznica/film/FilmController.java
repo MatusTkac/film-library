@@ -11,8 +11,6 @@ import java.util.List;
 @RequestMapping("/api/film")
 @RequiredArgsConstructor
 public class FilmController {
-    private final FilmService filmService;
-
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Film>> getAllFilms() {
