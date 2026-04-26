@@ -1,7 +1,10 @@
 package prax.kniznica.film;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public class FilmService implements FilmServiceInterface {
     @Override
     public List<Film> getFilmList() {

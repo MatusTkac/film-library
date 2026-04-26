@@ -1,14 +1,7 @@
 package prax.kniznica.rating;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/ratings")
@@ -22,27 +15,23 @@ public class RatingController {
 
     @GetMapping("/getAll")
     public List<Rating> getAllRatings() {
-        return null;
+        return ratingService.getAllRatings();
     }
 
     @PostMapping("/add")
-    public Rating addRating(
-        @RequestBody Rating rating) {
-        return null;
+    public void addRating(@RequestBody RatingRequest request) {
+        Rating rating = new Rating(null, request.getUserId(), request.getFilmId(), request.getValue());
+        ratingService.addRating(rating);
     }
 
     @PutMapping("/update/{id}")
-    public Rating updateRating(
-        @PathVariable Long id,
-        @RequestBody Rating rating) {
-
-        return null;
+    public void updateRating(@PathVariable Long id, @RequestBody RatingRequest request) {
+        Rating rating = new Rating(null, request.getUserId(), request.getFilmId(), request.getValue());
+        ratingService.updateRating(id, rating);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Void deleteRating(
-        @PathVariable Long id) {
-
-        return null;
+    public void deleteRating(@PathVariable Long id) {
+        ratingService.removeRating(id);
     }
 }
