@@ -10,7 +10,6 @@ public interface FilmServiceInterface {
     Film addFilm(Film film);
     Film editFilm(int id, Film film);
     Film removeFilm(int id);
-    List<Film> getTopFilm();
-    Film detailFilmById(int id);
+    
 
 }

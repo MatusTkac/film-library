@@ -16,32 +16,24 @@ public class FilmController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Film>> getAllFilms() {
-        return  null;
-    }
-
-    @GetMapping("/getTop")
-    public ResponseEntity<List<Film>> getTopFilms() {
-        return  null;
+        return ResponseEntity.ok(filmService.getFilmList());
     }
 
     @PostMapping("/add")
     public Film addFilm(@RequestBody Film film) {
-        return  null;
+        return filmService.addFilm(film);
     }
 
     @PostMapping("/edit")
     public Film editFilm(@RequestBody Film film) {
-        return  null;
+        return filmService.editFilm(film.getId(), film);
     }
 
-    @DeleteMapping("/remove")
-    public Film removeFilm(@RequestBody Film film) {
-        return  null;
+    @DeleteMapping("/remove/{id}")
+    public Film removeFilm(@PathVariable int id) {
+        return filmService.removeFilm(id);
     }
 
-    @GetMapping("/detail")
-    public Film getFilmDetail(@RequestParam int id) {
-        return  null;
-    }
+    
 
 }
